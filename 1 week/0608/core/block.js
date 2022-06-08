@@ -46,6 +46,7 @@ class Block {
     this.previousHash = _header.previousHash;
     this.merkleRoot = merkleroot;
     this.hash = Block.createBlockHash(_header, merkleroot);
+    // 순서가 merkleroot -> hash?
     this.data = _data;
     // this.a = 윗 블록 에있는 a 에 _a을 집어넣겟다
   }
@@ -57,7 +58,7 @@ class Block {
   }
 
   static createBlockHash(_header, _merkleroot) {
-      // header에 모든 정보를 string 으로 연결 ,\
+      // header에 모든 정보를 string 으로 연결 
       // TODO : 1. header 에 있는 객체안에있는 값을 스트링으로 연결
       const values = Object.values(_header);
       const data = values.join(['']) + _merkleroot;
@@ -67,11 +68,10 @@ class Block {
 }
 
 // previustHash
-// block 연결하는 애가 chain 배워
+// block 연결하는 애가 chain 배워야함
 // block 에서 첫번째블록에는 이름이 붙음 . 제네시스 블록
 
 const header = new BlockHeader(0, "asdfsafda");
-console.log(header);
 const data = [
   "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks",
 ];

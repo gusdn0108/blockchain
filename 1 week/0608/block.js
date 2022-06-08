@@ -3,7 +3,7 @@ const block = {
         version:"1.0.0",
         Height:0,
         timestamp:212313,
-        previoustHash:"",
+        previousHash:"",
         hash:"",
         merkleRoot:"",
         // body
